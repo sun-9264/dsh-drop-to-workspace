@@ -1,0 +1,39 @@
+{
+  "name": "@dsh-external/dsh-drop-to-workspace",
+  "version": "0.0.1",
+  "description": "DSH web GUI：拖拽任意文件到消息栏时自动落盘到工作区并返回可用路径",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "dsh",
+    "plugin",
+    "drop",
+    "workspace",
+    "attachment"
+  ],
+  "peerDependencies": {
+    "cordis": ">=4.0.0-rc <5",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.0.1-rc <2",
+    "@deepseek-ai/dsh-client-runtime": ">=0.0.1-rc <2"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  }
+}
